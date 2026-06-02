@@ -341,7 +341,6 @@ header div.container div.labels label{
 header div.container div.labels label::after{
     content: "";
     position: absolute;
-    /* inset: calc(var(--label-border) * -1); */
     top: 0;
     left: 0;
     bottom: 0;
