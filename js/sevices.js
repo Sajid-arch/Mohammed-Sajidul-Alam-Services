@@ -96,11 +96,7 @@ function initHeaderScroll() {
 // Header Hide on Scroll Code Start 
 
 
-
-
-
-
-// For Price Plan Info Box Start
+// For Latest Services Info Box Start
 
 
 const handleOnMouseMoveLs = e => {
@@ -119,8 +115,42 @@ const handleOnMouseMoveLs = e => {
 
 
 
+    for(const Ls of document.querySelectorAll(".ls-info")) {
+        Ls.onmousemove = e => handleOnMouseMoveLs(e);
+    }
+
+
+
+
+// For Latest Services Info Box End
+
+
+
+
+
+
+
+// For Price Plan Info Box Start
+
+
+const handleOnMouseMovePP = e => {
+    const { currentTarget: target } = e;
+
+
+    const rect = target.getBoundingClientRect(),
+
+    x = e.clientX - rect.left,
+    y = e.clientY - rect.top;
+
+    
+    target.style.setProperty("--mouse-x", `${x}px`);
+    target.style.setProperty("--mouse-y", `${y}px`);
+    }
+
+
+
     for(const Price of document.querySelectorAll(".pp-info")) {
-        Price.onmousemove = e => handleOnMouseMoveLs(e);
+        Price.onmousemove = e => handleOnMouseMovePP(e);
     }
 
 
